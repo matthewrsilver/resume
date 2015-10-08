@@ -1,0 +1,231 @@
+\documentclass{report}
+\usepackage{fullpage}
+\usepackage[letterpaper, top=.6in, bottom=.6in, left=.8in, right=.8in]{geometry}
+\usepackage{color}
+\usepackage{txfonts}
+\usepackage{enumitem}
+\usepackage{fontawesome}
+\usepackage{environ}
+
+\pagestyle{empty}
+\setlength\parindent{0.5in}
+\definecolor{mygray}{rgb}{0.6,0.6,0.6}
+\renewcommand{\labelitemi}{$\vardiamondsuit$}
+
+\makeatletter
+\newcommand\cellwidth{\TX@col@width}
+\makeatother
+
+\newcommand{\CC}{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\tiny\bf +}\nolinebreak\hspace{-.10em}\raisebox{.4ex}{\tiny\bf +}}
+
+\NewEnviron{resume_header}[5]
+{
+  \center
+  \Large
+  \textbf{#1}
+  \vspace{2mm}
+  \hrule width \textwidth
+  \vspace{1pt}
+  \hrule width \textwidth
+  \small
+  \vspace{2mm}
+
+  \begin{tabular*}{6.74in}{@{} c @{} l @{\extracolsep{\fill}} c @{\extracolsep{0in}} r @{} c @{}}
+    \footnotesize{\faEnvelope}     & ~\textbf{#2} & & \textbf{#3}~   & \faMobilePhone \\
+    \footnotesize{\faLinkedinSign} & ~\textbf{#4}   & & \textbf{#5}~ & \footnotesize{\faGithub}
+  \end{tabular*}
+
+  \vspace{3.5mm}
+
+  \small
+  \parbox{6.9in}{
+    \BODY
+  }
+
+  \endcenter
+  \vspace{1mm}
+}
+
+\newcommand{\sectionheader}[1]
+{
+
+  \vspace{.5mm}
+  \noindent
+  \large
+  \textbf{#1}
+  \vspace{.5mm}
+  \color{mygray}
+  \hrule width \textwidth
+  \color{black}
+  \vspace{3mm}
+
+}
+
+\newenvironment{experience_detail}[3]
+{
+
+  \noindent
+  \normalsize
+  \textbf{#1} \hfill \small #2 \normalsize \textendash\small~#3 \newline
+  \vskip -3 mm
+
+}
+{\vspace{3mm}}
+
+\newenvironment{position}[1]
+{
+
+  \noindent
+  \textbf{\textit{#1}} \small
+  \vspace{-1mm}
+  \begin{itemize}[leftmargin=4mm] \setlength{\itemsep}{0cm} \setlength{\parskip}{0cm}
+
+}
+{\end{itemize}}
+
+\newenvironment{skillset}[1]
+{
+
+  \noindent
+  \normalsize
+  \textbf{#1}
+  \small
+  \begin{itemize}[leftmargin=4mm] \setlength{\itemsep}{0cm} \setlength{\parskip}{0cm}
+
+}
+{
+  \end{itemize}
+  \vspace{3mm}
+}
+
+\newcommand{\school}[4]
+{
+
+  \noindent
+  \normalsize
+  \textbf{#1} \hfill \small #3 \normalsize \textendash\small~#4 \newline
+  \textit{#2}
+
+}
+
+\begin{document}
+
+  %
+  % Matthew R. Silver
+  %
+  % ===================================================================================
+
+  \begin{resume_header}{Matthew R. Silver, Ph.D.}{silverm@mit.edu}{xxx.xxx.xxxx}{matthewsilver}{matthewrsilver}
+
+    Data scientist with a background in computational neuroscience emphasizing neural networks, machine learning, dynamical systems modeling, and data analysis. Over fifteen years of programming experience, and formal education in computer science. Excellent communicator, with a history of collaboration in interdisciplinary environments.
+
+  \end{resume_header}
+
+
+  %
+  % Technical Skills
+  %
+
+  \sectionheader{Technical Skills}
+
+  \begin{skillset}{Machine Learning and Neural Networks}
+    \item Extensively familiar with feedforward and recurrent neural networks, backpropagation, deep learning, and LSTM
+    \item Theoretical understanding and practical experience applying both supervised and unsupervised techniques
+    \item Skilled practitioner of critical data handling methods: from dimensionality reduction to cross validation to visualization
+  \end{skillset}
+
+  \begin{skillset}{Programming Languages, Frameworks, and Software}
+    \item Comfortable with Python (numpy, scikit, theano, networkx, pandas); experience with R, Javascript, Bash, Matlab
+    \item Strong \CC~engineering experience; system-level thinker who writes sound, performant production code
+    \item Experienced working with distributed semi-structured JSON data (scala and spark) and structured data (SQL, CouchDB)
+  \end{skillset}
+
+
+
+  %
+  % Work Experience
+  %
+
+  \sectionheader{Work Experience}
+
+  % Vectra Networks
+
+  \begin{experience_detail}{Vectra Networks}{October 2014}{present}
+
+    \begin{position}{Senior Data Scientist}
+      \item Lead architect of an unsupervised learning system that models the typical behavior of key assets, and identifies anomalous traffic patterns to assist customers in monitoring the health and stability of their most important resources
+    \end{position}
+
+    \vspace{.5mm}
+
+    \begin{position}{Data Scientist}
+      \item Developed a system to model hosts in customer networks and identify when the host utilizing an address has changed
+      \item Implemented and improved upon algorithms in \CC~and python for detecting cyber attacks based on information flow
+      \item Conducted ad-hoc analyses of network metadata in spark to improve upon botnet and reconnaisance detection algorithms
+      \item Researched and prototyped an anomaly detector based on a deep autoencoder using H\textsubscript{2}O, R and scala
+    \end{position}
+
+  \end{experience_detail}
+
+
+  % Massachusetts Institute of Technology
+
+  \begin{experience_detail}{Masachusetts Institute of Technology}{2011}{2014}
+
+    \begin{position}{Postdoctoral Associate, Department of Brain and Cognitive Sciences}
+      \item \looseness=-1 Performed electrophysiological experiments: recorded signals in multiple brain areas as monkeys performed cognitive tasks
+      \item Analyzed neural data with Matlab to examine system-level interactions between different brain areas
+      \item Developed training and analysis infrastructure in Matlab to control and evaluate daily behavior of animals
+      \item Supervised graduate students as they developed experiments, built neural recording setups, and ran analyses
+    \end{position}
+
+  \end{experience_detail}
+
+
+  % Boston University
+
+  \begin{experience_detail}{Boston University}{2005}{2011}
+
+    \begin{position}{Research Assistant \& Teaching Assistant, Department of Cognitive and Neural Systems}
+      \item Designed a mathematical model of working memory using interacting systems of differential equations
+      \item Implemented the model in Matlab and \CC~to simulate brain function and explain experimental data
+      \item Explored and implemented neural networks and machine learning algorithms while studying their theoretical foundations
+      \item Collaborated with researchers at MIT and Harvard Medical to model their data
+    \end{position}
+
+  \end{experience_detail}
+
+
+  % Hamilton College
+
+  \begin{experience_detail}{Hamilton College}{2003}{2005}
+
+    \begin{position}{Lab Technician, Neuroscience Program}
+      \item Recorded electrical activity from single cells in the rat brain under pharmacological manipulation
+      \item Wrote software in C to process neural signals from a DAQ and perform analyses in a GUI front-end
+    \end{position}
+
+    \vspace{.5mm}
+
+    \begin{position}{Research Programmer, Computer Science Department}
+      \item Constructed genetic algorithms framework in Java to enable discovery of novel solutions to problems
+      \item Prepared the system for easy customization, via a modular architecture, and deployment in web browsers
+    \end{position}
+
+  \end{experience_detail}
+
+
+
+  %
+  % Education
+  %
+
+  \sectionheader{Education}
+
+  \school{Ph.D., Cognitive and Neural Systems (Computational Neuroscience)}{Boston University, Boston, MA}{2005}{2011}
+
+  \vspace{2mm}
+
+  \school{B.A., Neuroscience, minor concentration in Computer Science}{Hamilton College, Clinton, NY}{2001}{2005}
+
+\end{document}
