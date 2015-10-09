@@ -1,0 +1,133 @@
+\ProvidesPackage{ms_resume_style}
+
+\usepackage{fullpage}
+\usepackage[letterpaper, top=.6in, bottom=.6in, left=.8in, right=.8in]{geometry}
+\usepackage{color}
+\usepackage{txfonts}
+\usepackage{enumitem}
+\usepackage{fontawesome}
+\usepackage{environ}
+
+\pagestyle{empty}
+\setlength\parindent{0.5in}
+\definecolor{mygray}{rgb}{0.6,0.6,0.6}
+\renewcommand{\labelitemi}{$\vardiamondsuit$}
+
+\makeatletter
+\newcommand\cellwidth{\TX@col@width}
+\makeatother
+
+\newcommand{\CC}{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\tiny\bf +}\nolinebreak\hspace{-.10em}\raisebox{.4ex}{\tiny\bf +}}
+
+%
+% Special top header environment
+%
+
+\NewEnviron{resume_header}[5]
+{
+  \center
+  \Large
+  \textbf{#1}
+  \vspace{2mm}
+  \hrule width \textwidth
+  \vspace{1pt}
+  \hrule width \textwidth
+  \small
+  \vspace{2mm}
+
+  \begin{tabular*}{6.74in}{@{} c @{} l @{\extracolsep{\fill}} c @{\extracolsep{0in}} r @{} c @{}}
+    \footnotesize{\faEnvelope}     & ~\textbf{#2} & & \textbf{#3}~   & \faMobilePhone \\
+    \footnotesize{\faLinkedinSign} & ~\textbf{#4}   & & \textbf{#5}~ & \footnotesize{\faGithub}
+  \end{tabular*}
+
+  \vspace{3.5mm}
+
+  \small
+  \parbox{6.9in}{
+    \BODY
+  }
+
+  \endcenter
+  \vspace{1mm}
+}
+
+
+%
+% Section headers (Experience, Education, etc.)
+%
+
+\newcommand{\sectionheader}[1]
+{
+
+  \vspace{.5mm}
+  \noindent
+  \large
+  \textbf{#1}
+  \vspace{.5mm}
+  \color{mygray}
+  \hrule width \textwidth
+  \color{black}
+  \vspace{3mm}
+
+}
+
+%
+% Work Experience
+%
+
+\newenvironment{work_location}[3]
+{
+
+  \noindent
+  \normalsize
+  \textbf{#1} \hfill \small #2 \normalsize \textendash\small~#3 \newline
+  \vskip -3 mm
+
+}
+{\vspace{3mm}}
+
+\newenvironment{position}[1]
+{
+
+  \noindent
+  \textbf{\textit{#1}} \small
+  \vspace{-1mm}
+  \begin{itemize}[leftmargin=4mm] \setlength{\itemsep}{0cm} \setlength{\parskip}{0cm}
+
+}
+{\end{itemize}}
+
+
+%
+% Skillset
+%
+
+\newenvironment{skillset}[1]
+{
+
+  \noindent
+  \normalsize
+  \textbf{#1}
+  \small
+  \begin{itemize}[leftmargin=4mm] \setlength{\itemsep}{0cm} \setlength{\parskip}{0cm}
+
+}
+{
+  \end{itemize}
+  \vspace{3mm}
+}
+
+
+%
+% Degree
+%
+
+\newcommand{\degree}[4]
+{
+
+  \noindent
+  \normalsize
+  \textbf{#1} \hfill \small #3 \normalsize \textendash\small~#4 \newline
+  \textit{#2}
+
+}
