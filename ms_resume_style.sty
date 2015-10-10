@@ -7,6 +7,7 @@
 \usepackage{enumitem}
 \usepackage{fontawesome}
 \usepackage{environ}
+\usepackage[hidelinks]{hyperref}
 
 \pagestyle{empty}
 \setlength\parindent{0.5in}
@@ -18,6 +19,10 @@
 \makeatother
 
 \newcommand{\CC}{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\tiny\bf +}\nolinebreak\hspace{-.10em}\raisebox{.4ex}{\tiny\bf +}}
+\newcommand{\HzO}{H\textsubscript{2}O}
+
+\newcommand{\LinkedInLink}[1]{\href{https://www.linkedin.com/in/#1}{\textbf{#1}}}
+\newcommand{\GithubLink}[1]{\href{https://www.github.com/#1}{\textbf{#1}}}
 
 %
 % Special top header environment
@@ -36,8 +41,8 @@
   \vspace{2mm}
 
   \begin{tabular*}{6.74in}{@{} c @{} l @{\extracolsep{\fill}} c @{\extracolsep{0in}} r @{} c @{}}
-    \footnotesize{\faEnvelope}     & ~\textbf{#2} & & \textbf{#3}~   & \faMobilePhone \\
-    \footnotesize{\faLinkedinSign} & ~\textbf{#4}   & & \textbf{#5}~ & \footnotesize{\faGithub}
+    \footnotesize{\faEnvelope}     & ~\textbf{#2}         & &       \textbf{#3}~ &           \faMobilePhone \\
+    \footnotesize{\faLinkedinSign} & ~\LinkedInLink{#4}   & &   \GithubLink{#5}~ & \footnotesize{\faGithub}
   \end{tabular*}
 
   \vspace{3.5mm}
@@ -48,7 +53,7 @@
   }
 
   \endcenter
-  \vspace{1mm}
+  \vspace{2mm}
 }
 
 
