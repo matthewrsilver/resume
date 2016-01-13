@@ -25,6 +25,26 @@
 \newcommand{\GithubLink}[1]{\href{https://www.github.com/#1}{\textbf{#1}}}
 
 %
+% Pull phone number from make arguments, or use anonymous xxx.xxx.xxxx by default
+%
+
+\directlua{
+
+  phone = 'xxx.xxx.xxxx'
+  count = 0
+
+  for _ in pairs(arg) do
+    count = count + 1
+  end
+
+  if (count > 2) then
+    phone = arg[2]
+  end
+
+}
+
+
+%
 % Special top header environment
 %
 
