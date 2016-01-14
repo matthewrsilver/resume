@@ -31,16 +31,20 @@
 \directlua{
 
   phone = 'xxx.xxx.xxxx'
-  count = 0
 
-  for _ in pairs(arg) do
-    count = count + 1
+  if not (arg == nil) then
+
+    local count = 0
+
+    for _ in pairs(arg) do
+      count = count + 1
+    end
+
+    if (count > 2) then
+      phone = arg[2]
+    end
+
   end
-
-  if (count > 2) then
-    phone = arg[2]
-  end
-
 }
 
 
