@@ -11,7 +11,7 @@
 
   \begin{resume_header}{Matthew R. Silver, Ph.D.}{matthew.r.silver@gmail.com}{\directlua{tex.print(phone)}}{matthewsilver}{matthewrsilver}
 
-    Data scientist with a background in computational neuroscience emphasizing neural networks, machine learning, dynamical systems modeling, and data analysis. Over fifteen years of programming experience, and formal education in computer science. Excellent communicator and team player eager to work with talented people to solve complex, real world problems.
+    Data scientist with a background in computational neuroscience emphasizing neural networks, machine learning, dynamical systems modeling, and data analysis. Over twenty years of programming experience, and formal education in computer science. Excellent communicator and team player eager to work with talented people to solve complex, real world problems.
 
   \end{resume_header}
 
@@ -31,7 +31,7 @@
   \end{skillset}
 
   \begin{skillset}{Programming Languages, Frameworks, and Software}
-    \item Proficient with Python (numpy, scikit, theano, networkx, pandas); experience with Scala, R, JavaScript, Bash, Matlab
+    \item Proficient with Python (tensorflow, numpy, scikit, networkx, pandas); experience with Scala, R, JavaScript, Bash, Matlab
     \item Strong \CC{} engineering experience; system-level thinker who writes sound, performant production code
     \item Experienced working with both structured data (SQL) and semi-structured data (JSON, CouchDB, HDFS/Spark)
   \end{skillset}
@@ -49,12 +49,18 @@
 
   \begin{work_location}{Vectra Networks}{October 2014}{present}
 
+    \begin{position}{Lead Data Scientist}
+      \item \looseness=-1 Managed and built a team of five data scientists; coordinated with HQ to found and grow Vectra's Cambridge, MA office
+      \item Planned the algorithm development roadmap for the data science team in collaboration with product and security teams
+      \item Designed and implemented a framework for detecting and communicating ongoing attack campaigns to customers
+    \end{position}
+
     \begin{position}{Senior Data Scientist}
       \item Promoted from Data Scientist to Senior Data Scientist after 11 months, in August 2015
-      \item Developed a system to model hosts in customer networks and identify when the host utilizing an address has changed
+      \item Created deep recurrent neural networks for learning embeddings of network time series data, which resulted in a patent
       \item Implemented and improved upon algorithms in \CC{} and Python for detecting cyber attacks based on information flow
-      \item Conducted ad-hoc analyses in Scala with Spark to investigate coverage of botnet and reconnaissance detection algorithms
-      \item Designed and built anomaly detection systems, including one based on a deep autoencoder using \HzO{}, R and Scala
+      \item Crafted various anomaly detection systems, including one based on a deep autoencoder using \HzO{}, R and Scala
+      \item Developed a system to model hosts in customer networks and identify when the host utilizing an address has changed
     \end{position}
 
   \end{work_location}
@@ -82,29 +88,18 @@
       \item Explored and implemented neural networks and machine learning algorithms while studying their theoretical foundations
       \item Designed a mathematical model of working memory using interacting systems of differential equations
       \item Implemented the model in Matlab and \CC{} to simulate brain function and explain experimental data
-      \item Collaborated with researchers at MIT and Harvard Medical to model their data
     \end{position}
 
   \end{work_location}
 
 
-  % Hamilton College
+  %
+  % Patents
+  %
 
-  \begin{work_location}{Hamilton College}{2003}{2005}
+  \sectionheader{Patents}
 
-    \begin{position}{Lab Technician, Neuroscience Program}
-      \item Recorded electrical activity from single cells in the rat brain under pharmacological manipulation
-      \item Wrote software in C to process neural signals from a DAQ and perform analyses in a GUI front-end
-    \end{position}
-
-    \begin{position}{Research Programmer, Computer Science Department}
-      \item Constructed genetic algorithms framework in Java to enable discovery of novel solutions to problems
-      \item Prepared the system for easy customization, via a modular architecture, and deployment in web browsers
-    \end{position}
-
-  \end{work_location}
-
-
+  \patent {Silver, Matthew R. and Kazerounian, Sohrob}{2017}{Method and System for Learning Representations of Network Flow Traffic}{US Patent Number 12345}{January 27, 2018}
 
   %
   % Education
