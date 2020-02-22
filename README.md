@@ -17,14 +17,21 @@ make phone=201.555.1234
 ### Dependencies
 
 #### Ubuntu
-All dependencies are stored in the file dependencies.txt. To install these dependencies in ubuntu, run:
+All dependencies are stored in the file ubuntu-dependencies.txt. To install these dependencies in ubuntu, run:
 
 ```bash
-sudo apt-get install $(< dependencies.txt)
+sudo apt-get install $(< ubuntu-dependencies.txt)
 ```
 
 #### Mac
-An installation of maxtex-no-gui contains all necessary dependencies, but be sure to add `texbin` to your path, e.g. with:
+An installation of maxtex-no-gui contains all necessary dependencies with the exception of git-lfs. Perform the following:
+
+```bash
+brew cask install mactex-no-gui
+brew install git-lfs
+```
+
+Next, but be sure to add `/Library/TeX/texbin` to your path, e.g. with:
 
 ```bash
 export PATH=$PATH:/Library/TeX/texbin

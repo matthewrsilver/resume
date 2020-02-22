@@ -4,3 +4,4 @@ texlive-latex-extra
 texlive-fonts-extra
 texlive-luatex
 texlive-xetex
+git-lfs
